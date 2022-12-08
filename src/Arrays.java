@@ -11,7 +11,12 @@ public class Arrays {
     }
 
     public static int minimalerWertImArray(int[] array) {
-        // TODO
+        int kleinsterWert = array[0];
+        for (int i=1; i < array.length; i++) {
+            if (array[i] < kleinsterWert)
+                kleinsterWert = array[i];
+        }
+        return kleinsterWert;
     }
 
     public static void main(String[] args) {
@@ -21,5 +26,7 @@ public class Arrays {
                 sucheImArray(datenreihe, 12) );
         System.out.println("Die 23 ist in der Datenreihe: " +
                 sucheImArray(datenreihe, 23) );
+        System.out.println("Kleinster Wert: " +
+                minimalerWertImArray(datenreihe));
     }
 }
