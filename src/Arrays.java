@@ -19,6 +19,11 @@ public class Arrays {
         return kleinsterWert;
     }
 
+    public static boolean istArraySortiert(int[] array) {
+        // TODO
+        return false;
+    }
+
     public static void main(String[] args) {
         int[] datenreihe = { 17, 3, 29, 22, 5, 11, 9, 13, 7, 12 };
 
