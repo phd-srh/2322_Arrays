@@ -89,7 +89,12 @@ public class Arrays {
      *  Ergebnis = 2
      */
     public static int zähleGleicheEinträge(int[] a, int[] b) {
-
+        int zähleGleiche = 0;
+        for (int i=0; i < a.length; i++) {
+            if ( sucheImArray(b, a[i]) )
+                zähleGleiche++;
+        }
+        return zähleGleiche;
     }
 
     /*
@@ -98,7 +103,16 @@ public class Arrays {
      *  Ergebnis = [ 3, 25 ]
      */
     public static int[] findeGleicheEinträge(int[] a, int[] b) {
-
+        int gleichElemente = zähleGleicheEinträge(a, b);
+        int[] neuesArray = new int[ gleichElemente ];
+        int neuerIndex = 0;
+        for (int i=0; i < a.length; i++) {
+            if (sucheImArray(b, a[i])) {
+                neuesArray[neuerIndex] = a[i];
+                neuerIndex++;
+            }
+        }
+        return neuesArray;
     }
 
     public static void main(String[] args) {
@@ -119,6 +133,11 @@ public class Arrays {
 //        java.util.Arrays.sort( datenreihe ); // <- was ist das denn???
         ausgabeArray(datenreihe);
 
-        entferneZahlAusArray(datenreihe, 13);
+        int[] arrayOhne13 = entferneZahlAusArray(datenreihe, 13);
+        ausgabeArray(arrayOhne13);
+
+        int[] a = { 3, 13, 25, 7 }, b = { 17, 25, 3 };
+        int[] gleicheVonAundB = findeGleicheEinträge(a, b);
+        ausgabeArray(gleicheVonAundB);
     }
 }
