@@ -52,6 +52,16 @@ public class Arrays {
         System.out.println("]");
     }
 
+    /* Vorher-Aufgabe
+     * Eine Methode, die eine übergebenes Array kopiert!
+     */
+    public static int[] erstelleKopieDesArray(int[] array) {
+        int[] neuesArray = new int[ array.length ];
+        for (int i=0; i < array.length; i++)
+            neuesArray[i] = array[i];
+        return neuesArray;
+    }
+
     /* Neue Aufgabe: Entferne
      *  z.B. array = [ 3, 7, 13, 25 ], zahl = 13
      *  Ergebnis = [ 3, 7, 25 ]
@@ -59,8 +69,18 @@ public class Arrays {
      *          das übergebene manipuliert!!
      */
     public static int[] entferneZahlAusArray(int[] array, int zahl) {
-        // TODO
-        return array; // <- nur Platzhalter, das stimmt nicht!
+        int längeDesNeuenArrays = array.length;
+        if ( sucheImArray(array, zahl) ) längeDesNeuenArrays--;
+
+        int[] neuesArray = new int[ längeDesNeuenArrays ];
+        int neuerIndex = 0;
+        for (int i=0; i < array.length; i++) {
+            if (array[i] != zahl) {
+                neuesArray[neuerIndex] = array[i];
+                neuerIndex++;
+            }
+        }
+        return neuesArray;
     }
 
     public static void main(String[] args) {
@@ -80,5 +100,7 @@ public class Arrays {
         sortierArrayBubbleSort(datenreihe);
 //        java.util.Arrays.sort( datenreihe ); // <- was ist das denn???
         ausgabeArray(datenreihe);
+
+        entferneZahlAusArray(datenreihe, 13);
     }
 }
