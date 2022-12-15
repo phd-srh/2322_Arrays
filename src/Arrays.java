@@ -84,7 +84,17 @@ public class Arrays {
     }
 
     /*
-     *  z.B. a = [ 3, 7, 13, 25 ], b = [ 3, 17, 25 ]
+     *  z.B. a = [ 3, 13, 25, 7 ], b = [ 17, 25, 3 ]
+     *  die beiden Arrays sind unsortiert und unterschiedlicher Länge
+     *  Ergebnis = 2
+     */
+    public static int zähleGleicheEinträge(int[] a, int[] b) {
+
+    }
+
+    /*
+     *  z.B. a = [ 3, 13, 25, 7 ], b = [ 17, 25, 3 ]
+     *  die beiden Arrays sind unsortiert und unterschiedlicher Länge
      *  Ergebnis = [ 3, 25 ]
      */
     public static int[] findeGleicheEinträge(int[] a, int[] b) {
