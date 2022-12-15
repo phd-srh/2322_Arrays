@@ -83,6 +83,14 @@ public class Arrays {
         return neuesArray;
     }
 
+    /*
+     *  z.B. a = [ 3, 7, 13, 25 ], b = [ 3, 17, 25 ]
+     *  Ergebnis = [ 3, 25 ]
+     */
+    public static int[] findeGleicheEinträge(int[] a, int[] b) {
+
+    }
+
     public static void main(String[] args) {
         int[] datenreihe = { 17, 3, 29, 22, 5, 11, 9, 13, 7, 12 };
         int[] sortierteFolge = { 3, 5, 5, 7, 11, 22, 29, 37, 55, 103 };
